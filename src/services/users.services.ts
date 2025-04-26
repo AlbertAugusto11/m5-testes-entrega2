@@ -31,7 +31,7 @@ export class UsersServices {
 
             } else {
                 const data = { id: findUser.id, name: findUser.name, email: findUser.email }
-                const token = jwt.sign(data, process.env.JWT_KEY as string, { expiresIn: "1h" })
+                const token = jwt.sign(data, process.env.JWT_SECRET as string, { expiresIn: "1h" })
 
                 return {
                     accessToken: token, user: {

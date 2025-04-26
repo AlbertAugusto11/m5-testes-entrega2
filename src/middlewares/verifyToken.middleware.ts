@@ -10,7 +10,7 @@ export class verifyToken {
          throw new AppError(401, "Token is required")
 
       } else {
-         jwt.verify(token, process.env.JWT_KEY as string)
+         jwt.verify(token, process.env.JWT_SECRET as string)
          const decode = jwt.decode(token) as { id: number, name: string, email: string, iat: number, exp: number }
 
          res.locals.user = decode
