@@ -1,9 +1,9 @@
-import { hash } from "bcryptjs";
 import { describe, expect, it } from "vitest";
 import { prisma } from "../../../database/prisma";
 import { userMock } from "../../mocks/user.mocks";
 import { request } from "../../setupFiles";
 import { userDefaultExpects } from "../../utils/userDefaultExpects";
+import { hash } from "bcrypt";
 
 const loginUserBeforeEach = async () => {
   const password = await hash(userMock.password, 10);
