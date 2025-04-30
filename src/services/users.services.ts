@@ -45,7 +45,7 @@ export class UsersServices {
 
     }
 
-    autoLogin(user: any) {
+    autoLogin(user: { id: number, name: string, email: string, iat: number, exp: number }) {
 
         const decode = user
 

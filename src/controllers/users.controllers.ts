@@ -17,10 +17,11 @@ export class UsersControllers {
 
         if (response == "Email and password doesn't match") {
             return res.status(401).json({ message: response })
+
         } else {
             return res.status(200).json(response)
-        }
 
+        }
     }
 
     autoLogin(req: Request, res: Response) {
